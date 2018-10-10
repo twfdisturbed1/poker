@@ -1,3 +1,5 @@
+require_relative "pairs.rb"
+
 # My Deck of Cards
 deck = [] 
 # Player 1
@@ -23,21 +25,21 @@ $black_hand =" "
 
 
 class Card
-    attr_accessor :value, :type
+    attr_accessor :points, :type
     def initialize(str)
       v = str[0]
       if v == "T"
-        @value = 10
+        @points = 10
       elsif v == "J"
-        @value = 11
+        @points = 11
       elsif v == "Q"
-        @value = 12
+        @points = 12
       elsif v == "K"
-        @value = 13
+        @points = 13
       elsif v == "A"
-        @value = 14
+        @points = 14
       else
-        @value = v.to_i
+        @points = v.to_i
       end
       @type  = str[1]
     end
@@ -116,7 +118,7 @@ end
 
 if all_poker_straights.include?((black_no_suit)) 
     true
-    $b_score += 8
+    $b_score += 8 
     $black_hand = $black_hand + " Straight "
 else
 end
@@ -171,465 +173,7 @@ end
 # end
 alpha_table = {"T" => 10, "J" => 11, "Q" => 12, "K" => 13, "A" => 14}
 
-def w_pairs (num1, num2, num3, num4, num5)
-    if num1 == num2 and num1 == num3 and num1 == num4
-        puts "4 of a Kind of #{num1}" 
-        $w_score += 7
-        $white_hand = $white_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num2 and num1 == num3 and num1 == num5
-         puts "4 of a Kind of #{num1}"
-        $w_score += 7
-        $white_hand = $white_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num3 and num1 == num4 and num1 == num5
-         puts "4 of a kind of #{num1}"
-        $w_score += 7
-        $white_hand = $white_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num2 and num1 == num4 and num1 == num5
-         puts "4 of a kind of #{num1}" 
-        $w_score += 7
-        $white_hand = $white_hand + " 4 of a kind of #{num1} "
-    elsif num2 == num3 and num2 == num4 and num2 == num5
-         puts "4 of a kind of #{num2}"
-        $w_score += 7
-        $white_hand = $white_hand + " 4 of a kind of #{num2} "
-    elsif num1 == num2 and num1 == num3 and num4 == num5
-         puts "Full House of #{num1} and #{num4}"
-        $w_score += 6
-        $white_hand = $white_hand + " Full House of #{num3} and #{num1} "
-    elsif num1 == num2 and num1 == num4 and num3 == num5
-         puts "Full House of #{num1} and #{num3}"
-         $white_hand = $white_hand + " Full House of #{num1} and #{num3} "
-        $w_score += 6
-    elsif num1 == num2 and num1 == num5 and num3 == num4 
-         puts "Full House of #{num1} and #{num3}"
-         $white_hand = $white_hand + " Full House of #{num1} and #{num3} "
-        $w_score += 6
-    elsif num1 == num3 and num1 == num4 and num2 == num5
-         puts "Full House of #{num1} and #{num2}"
-         $white_hand = $white_hand + " Full House of #{num1} and #{num2} "
-        $w_score += 6
-    elsif num1 == num3 and num1 == num5 and num2 == num4
-         puts "Full House of #{num1} and #{num2}"
-         $white_hand = $white_hand + " Full House of #{num1} and #{num2} "
-        $w_score += 6
-    elsif num1 == num4 and num1 == num5 and num2 == num3
-         puts "Full House of #{num1} and #{num2}"
-         $white_hand = $white_hand + " Full House of #{num1} and #{num2} "
-        $w_score += 6
-    elsif num2 == num3 and num2 == num4 and num1 == num5
-         puts "Full House of #{num2} and #{num1}"
-         $white_hand = $white_hand + " Full House of #{num2} and #{num1} "
-        $w_score += 6
-    elsif num2 == num3 and num2 == num5 and num1 == num4
-         puts "Full House of #{num2} and #{num1}"
-         $white_hand = $white_hand + " Full House of #{num2} and #{num1} "
-        $w_score += 6
-    elsif num2 == num4 and num2 == num5 and num1 == num3 
-         puts "Full House of #{num2} and #{num1}"
-         $white_hand = $white_hand + " Full House of #{num2} and #{num1} "
-        $w_score += 6
-    elsif num3 == num4 and num3 == num5 and num1 == num2
-         puts "Full House of #{num3} and #{num1}"
-         $white_hand = $white_hand + " Full House of #{num3} and #{num1} "
-        $w_score += 6
-    elsif num1 == num2 and num1 == num3
-         puts "3 of a kind of #{num1}"
-         $white_hand = $white_hand + " 3 of a kind of #{num1} "
-        $w_score += 4
-    elsif num1 == num2 and num1 == num4
-         puts "3 of a kind of #{num1}"
-         $white_hand = $white_hand + " 3 of a kind of #{num1} "
-        $w_score += 4
-    elsif num1 == num2 and num1 == num5
-         puts "3 of a kind of #{num1}"
-         $white_hand = $white_hand + " 3 of a kind of #{num1} "
-        $w_score += 4
-    elsif num1 == num3 and num1 == num4
-         puts "3 of a kind of #{num1}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num1} "
-    elsif num1 == num3 and num1 == num5
-         puts "3 of a kind of #{num1}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num1} "
-    elsif num1 == num4 and num1 == num5
-         puts "3 of a kind of #{num1}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num1} "
-    elsif num2 == num3 and num2 == num4
-         puts "3 of a kind of #{num2}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num2} "
-    elsif num2 == num3 and num2 == num5
-         puts "3 of a kind of #{num2}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num2} "
-    elsif num2 == num4 and num2 == num5 
-         puts "3 of a kind of #{num2}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num3} "
-    elsif num3 == num4 and num3 == num5
-         puts "3 of a kind of #{num3}"
-        $w_score += 4
-        $white_hand = $white_hand + " 3 of a kind of #{num3} "
-    elsif num1 == num2 and num3 == num4
-         puts "Two Pairs of #{num1} and #{num3}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num3}   "
-    elsif num1 == num2 and num3 == num5
-         puts "Two Pairs of #{num1} and #{num3}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num1 == num2 and num4 == num5
-         puts "Two Pairs of #{num1} and #{num4}"
-        $w_score += 3 
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num4}   "
-    elsif num1 == num3 and num2 == num4
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num3 and num2 == num5
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num3 and num4 == num5
-         puts "Two Pairs of #{num1} and #{num4}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num4}   "
-    elsif num1 == num4 and num2 == num3
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num4 and num2 == num5
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num4 and num3 == num5
-         puts "Two Pairs of #{num1} and #{num3}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num1 == num5 and num2 == num3
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num5 and num2 == num4
-         puts "Two Pairs of #{num1} and #{num2}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num5 and num3 == num4
-         puts "Two Pairs of #{num1} and #{num3}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num2 == num3 and num4 == num5
-         puts "Two Pairs of #{num2} and #{num4}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num4}   "
-    elsif num2 == num3 and num1 == num5
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num3 and num1 == num4
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num1 == num3
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num1 == num5
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num3 == num5
-         puts "Two Pairs of #{num2} and #{num3}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num3}   "
-    elsif num2 == num5 and num1 == num3
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num5 and num1 == num4
-         puts "Two Pairs of #{num2} and #{num1}"
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num5 and num3 == num4
-         puts "Two Pairs of #{num2} and #{num3} "
-        $w_score += 3
-        $white_hand = $white_hand + " Two Pairs of #{num2} and #{num3}  "
-    elsif num1 == num2 
-         puts "A pair of #{num1}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num1}"
-    elsif num1 == num3 
-         puts "a pair of #{num1}"
-         $white_hand = $white_hand + " a pair of #{num1} "
-        $w_score += 2
-    elsif num1 == num4
-         puts "A pair of #{num1}"
-         $white_hand = $white_hand + " a pair of #{num1} "
-        $w_score += 2
-    elsif num1 == num5
-         puts "A pair of #{num1}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num1} "
-    elsif num2 == num3
-         puts "A pair of #{num2}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num2} "
-    elsif num2 == num4
-         puts "A pair of #{num2}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num2} "
-    elsif num2 == num5
-         puts "A pair of #{num2}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num2} "
-    elsif num3 == num4
-         puts "A pair of #{num3}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num3} "
-    elsif num3 == num5
-         puts "A pair of #{num3}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num3} "
-    elsif num4 == num5
-         puts "A pair of #{num4}"
-        $w_score += 2
-        $white_hand = $white_hand + " a pair of #{num4} "
-    else
-        puts "no matching cards"
-    end
-end
 
-def b_pairs (num1, num2, num3, num4, num5)
-    if num1 == num2 and num1 == num3 and num1 == num4
-        puts "4 of a Kind of #{num1}" 
-        $b_score += 7
-        $black_hand = $black_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num2 and num1 == num3 and num1 == num5
-         puts "4 of a Kind of #{num1}"
-        $b_score += 7
-        $black_hand = $black_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num3 and num1 == num4 and num1 == num5
-         puts "4 of a kind of #{num1}"
-        $b_score += 7
-        $black_hand = $black_hand + " 4 of a kind of #{num1} "
-    elsif num1 == num2 and num1 == num4 and num1 == num5
-         puts "4 of a kind of #{num1}" 
-        $b_score += 7
-        $black_hand = $black_hand + " 4 of a kind of #{num1} "
-    elsif num2 == num3 and num2 == num4 and num2 == num5
-         puts "4 of a kind of #{num2}"
-        $b_score += 7
-        $black_hand = $black_hand + " 4 of a kind of #{num2} "
-    elsif num1 == num2 and num1 == num3 and num4 == num5
-         puts "Full House of #{num1} and #{num4}"
-        $b_score += 6
-        $black_hand = $black_hand + " Full House of #{num3} and #{num1} "
-    elsif num1 == num2 and num1 == num4 and num3 == num5
-         puts "Full House of #{num1} and #{num3}"
-         $black_hand = $black_hand + " Full House of #{num1} and #{num3} "
-        $b_score += 6
-    elsif num1 == num2 and num1 == num5 and num3 == num4 
-         puts "Full House of #{num1} and #{num3}"
-         $black_hand = $black_hand + " Full House of #{num1} and #{num3} "
-        $b_score += 6
-    elsif num1 == num3 and num1 == num4 and num2 == num5
-         puts "Full House of #{num1} and #{num2}"
-         $black_hand = $black_hand + " Full House of #{num1} and #{num2} "
-        $b_score += 6
-    elsif num1 == num3 and num1 == num5 and num2 == num4
-         puts "Full House of #{num1} and #{num2}"
-         $black_hand = $black_hand + " Full House of #{num1} and #{num2} "
-        $b_score += 6
-    elsif num1 == num4 and num1 == num5 and num2 == num3
-         puts "Full House of #{num1} and #{num2}"
-         $black_hand = $black_hand + " Full House of #{num1} and #{num2} "
-        $b_score += 6
-    elsif num2 == num3 and num2 == num4 and num1 == num5
-         puts "Full House of #{num2} and #{num1}"
-         $black_hand = $black_hand + " Full House of #{num2} and #{num1} "
-        $b_score += 6
-    elsif num2 == num3 and num2 == num5 and num1 == num4
-         puts "Full House of #{num2} and #{num1}"
-         $black_hand = $black_hand + " Full House of #{num2} and #{num1} "
-        $b_score += 6
-    elsif num2 == num4 and num2 == num5 and num1 == num3 
-         puts "Full House of #{num2} and #{num1}"
-         $black_hand = $black_hand + " Full House of #{num2} and #{num1} "
-        $b_score += 6
-    elsif num3 == num4 and num3 == num5 and num1 == num2
-         puts "Full House of #{num3} and #{num1}"
-         $black_hand = $black_hand + " Full House of #{num3} and #{num1} "
-        $b_score += 6
-    elsif num1 == num2 and num1 == num3
-         puts "3 of a kind of #{num1}"
-         $black_hand = $black_hand + " 3 of a kind of #{num1} "
-        $b_score += 4
-    elsif num1 == num2 and num1 == num4
-         puts "3 of a kind of #{num1}"
-         $black_hand = $black_hand + " 3 of a kind of #{num1} "
-        $b_score += 4
-    elsif num1 == num2 and num1 == num5
-         puts "3 of a kind of #{num1}"
-         $black_hand = $black_hand + " 3 of a kind of #{num1} "
-        $b_score += 4
-    elsif num1 == num3 and num1 == num4
-         puts "3 of a kind of #{num1}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num1} "
-    elsif num1 == num3 and num1 == num5
-         puts "3 of a kind of #{num1}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num1} "
-    elsif num1 == num4 and num1 == num5
-         puts "3 of a kind of #{num1}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num1} "
-    elsif num2 == num3 and num2 == num4
-         puts "3 of a kind of #{num2}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num2} "
-    elsif num2 == num3 and num2 == num5
-         puts "3 of a kind of #{num2}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num2} "
-    elsif num2 == num4 and num2 == num5 
-         puts "3 of a kind of #{num2}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num3} "
-    elsif num3 == num4 and num3 == num5
-         puts "3 of a kind of #{num3}"
-        $b_score += 4
-        $black_hand = $black_hand + " 3 of a kind of #{num3} "
-    elsif num1 == num2 and num3 == num4
-         puts "Two Pairs of #{num1} and #{num3}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num3}   "
-    elsif num1 == num2 and num3 == num5
-         puts "Two Pairs of #{num1} and #{num3}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num1 == num2 and num4 == num5
-         puts "Two Pairs of #{num1} and #{num4}"
-        $b_score += 3 
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num4}   "
-    elsif num1 == num3 and num2 == num4
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num3 and num2 == num5
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num3 and num4 == num5
-         puts "Two Pairs of #{num1} and #{num4}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num4}   "
-    elsif num1 == num4 and num2 == num3
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num4 and num2 == num5
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num4 and num3 == num5
-         puts "Two Pairs of #{num1} and #{num3}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num1 == num5 and num2 == num3
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num5 and num2 == num4
-         puts "Two Pairs of #{num1} and #{num2}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num2}   "
-    elsif num1 == num5 and num3 == num4
-         puts "Two Pairs of #{num1} and #{num3}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num1} and #{num3}   "
-    elsif num2 == num3 and num4 == num5
-         puts "Two Pairs of #{num2} and #{num4}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num4}   "
-    elsif num2 == num3 and num1 == num5
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num3 and num1 == num4
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num1 == num3
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num1 == num5
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num4 and num3 == num5
-         puts "Two Pairs of #{num2} and #{num3}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num3}   "
-    elsif num2 == num5 and num1 == num3
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num5 and num1 == num4
-         puts "Two Pairs of #{num2} and #{num1}"
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num1}   "
-    elsif num2 == num5 and num3 == num4
-         puts "Two Pairs of #{num2} and #{num3} "
-        $b_score += 3
-        $black_hand = $black_hand + " Two Pairs of #{num2} and #{num3}  "
-    elsif num1 == num2 
-         puts "A pair of #{num1}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num1}"
-    elsif num1 == num3 
-         puts "a pair of #{num1}"
-         $black_hand = $black_hand + " a pair of #{num1} "
-        $b_score += 2
-    elsif num1 == num4
-         puts "A pair of #{num1}"
-         $black_hand = $black_hand + " a pair of #{num1} "
-        $b_score += 2
-    elsif num1 == num5
-         puts "A pair of #{num1}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num1} "
-    elsif num2 == num3
-         puts "A pair of #{num2}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num2} "
-    elsif num2 == num4
-         puts "A pair of #{num2}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num2} "
-    elsif num2 == num5
-         puts "A pair of #{num2}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num2} "
-    elsif num3 == num4
-         puts "A pair of #{num3}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num3} "
-    elsif num3 == num5
-         puts "A pair of #{num3}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num3} "
-    elsif num4 == num5
-         puts "A pair of #{num4}"
-        $b_score += 2
-        $black_hand = $black_hand + " a pair of #{num4} "
-    else
-        puts "no matching cards"
-    end
-end
 
 puts "White has "
     w_pairs(white[0][0,1],white[1][0,1],white[2][0,1],white[3][0,1],white[4][0,1])
@@ -648,8 +192,10 @@ elsif
     $b_score > $w_score
     puts "Black Wins"  
 else
+
     puts "Draw"
 end
+
     # if white[0][0,1] && white[1][0,1] && white[2][0,1] == white[3][0,1] or white[0][0,1] && white[1][0,1] && white[2][0,1] == white[4][0,1] or white[1][0,1] && white[2][0,1] && white[3][0,1] == white[4][0,1] or white[0][0,1] && white[1][0,1] && white[3][0,1] == white[4][0,1]
 #     puts "White has 4 of a Kind"
 #     elsif 
