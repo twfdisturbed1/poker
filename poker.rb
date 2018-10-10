@@ -4,6 +4,43 @@ deck = []
 white = []
 # Player 2
 black = []
+# class Deck
+#     intialize(suit, rank)
+# @suit = suits
+# @rank = values
+# end
+# def get_card_value(value)
+# card_value =  ""
+
+# case value
+# when 2
+# card_value = 2
+# when 3
+#     card_value = 3
+# when 4
+#     card_value = 4
+# when 5
+#     card_value = 5
+# when 6
+#     card_value = 6
+# when 7
+#     card_value = 7
+# when 8
+#     card_value = 8
+# when 9
+#     card_value = 9
+# when T
+#     card_value = 10
+# when J
+#     card_value = 11
+# when Q
+#     card_value = 12
+# when K
+#     card_value = 13
+# when A
+#     card_value = 14
+# end
+# end
 
 # Building the Deck
 suits = ["H", "D", "C", "S" ]
@@ -27,11 +64,11 @@ ace_high = 14
 #     white << deck.pop 
 # end
 
-white << "3h"
-white << "5c"
-white << "2d"
-white << "5s"
-white << "5h"
+white << "7h"
+white << "7c"
+white << "7d"
+white << "7s"
+white << "9h"
 
 5.times do 
     black << deck.pop
@@ -74,19 +111,8 @@ if counter == 5
         puts "Black doesn't have a flush"
 end
 
-counter = 0
-white.each_with_index do |value , index| 
-if white[index][0,1] == white[4][0,1] 
-counter += 1
-puts "#{counter}"
-    if counter == 3
-            break
-    end
-else
-end
-end
 
-if counter == 3
+if counter >= 3
     puts "White has 4 of a kind"
     elsif counter == 2 
         puts "White has 3 of a kind"
@@ -97,8 +123,131 @@ if counter == 3
 end
 
 
-    
-# if white[0][0,1] && white[1][0,1] && white[2][0,1] == white[3][0,1] or white[0][0,1] && white[1][0,1] && white[2][0,1] == white[4][0,1] or white[1][0,1] && white[2][0,1] && white[3][0,1] == white[4][0,1] or white[0][0,1] && white[1][0,1] && white[3][0,1] == white[4][0,1]
+def pairs (num1, num2, num3, num4, num5)
+    if num1 == num2 and num1 == num3 and num1 == num4
+        return puts "4 of a Kind"
+    elsif num1 == num2 and num1 == num3 and num1 == num5
+        return puts "4 of a Kind"
+    elsif num1 == num3 and num1 == num4 and num1 == num5
+        return puts "4 of a kind"
+    elsif num1 == num2 and num1 == num4 and num1 == num5
+        return puts "4 of a kind"
+    elsif num2 == num3 and num2 == num4 and num2 == num5
+        return puts "4 of a kind"
+    elsif num1 == num2 and num1 == num3 and num4 == num5
+        return puts "Full House"
+    elsif num1 == num2 and num1 == num4 and num3 == num5
+        return puts "Full House"
+    elsif num1 == num2 and num1 == num5 and num3 == num4 
+        return puts "Full House"
+    elsif num1 == num3 and num1 == num4 and num2 == num5
+        return puts "Full House"
+    elsif num1 == num3 and num1 == num5 and num2 == num4
+        return puts "Full House"
+    elsif num1 == num4 and num1 == num5 and num2 == num3
+        return puts "Full House"
+    elsif num2 == num3 and num2 == num4 and num1 == num5
+        return puts "Full House"
+    elsif num2 == num3 and num2 == num5 and num1 == num4
+        return puts "Full House"
+    elsif num2 == num4 and num2 == num5 and num1 == num3 
+        return puts "Full House"
+    elsif num3 == num4 and num3 == num5 and num1 == num2
+        return puts "Full House"
+    elsif num1 == num2 and num1 == num3
+        return puts "3 of a kind"
+    elsif num1 == num2 and num1 == num4
+        return puts "3 of a kind"
+    elsif num1 == num2 and num1 == num5
+        return puts "3 of a kind"
+    elsif num1 == num3 and num1 == num4
+        return puts "3 of a kind"
+    elsif num1 == num3 and num1 == num5
+        return puts "3 of a kind"
+    elsif num1 == num4 and num1 == num5
+        return puts "3 of a kind"
+    elsif num2 == num3 and num2 == num4
+        return puts "3 of a kind"
+    elsif num2 == num3 and num2 == num5
+        return puts "3 of a kind"
+    elsif num2 == num4 and num2 == num5 
+        return puts "3 of a kind"
+    elsif num3 == num4 and num3 == num5
+        return puts "3 of a kind"
+    elsif num1 == num2 and num3 == num4
+        return puts "Two Pairs"
+    elsif num1 == num2 and num3 == num5
+        return puts "Two Pairs"
+    elsif num1 == num2 and num4 == num5
+        return puts "Two Pairs" 
+    elsif num1 == num3 and num2 == num4
+        return puts "Two Pairs"
+    elsif num1 == num3 and num2 == num5
+        return puts "Two Pairs"
+    elsif num1 == num3 and num4 == num5
+        return puts "Two Pairs"
+    elsif num1 == num4 and num2 == num3
+        return puts "Two Pairs"
+    elsif num1 == num4 and num2 == num5
+        return puts "Two Pairs"
+    elsif num1 == num4 and num3 == num5
+        return puts "Two Pairs"
+    elsif num1 == num5 and num2 == num3
+        return puts "Two Pairs"
+    elsif num1 == num5 and num2 == num4
+        return puts "Two Pairs"
+    elsif num1 == num5 and num3 == num4
+        return puts "Two Pairs"
+    elsif num2 == num3 and num4 == num5
+        return puts "Two Pairs"
+    elsif num2 == num3 and num1 == num5
+        return puts "Two Pairs"
+    elsif num2 == num3 and num1 == num4
+        return puts "Two Pairs"
+    elsif num2 == num4 and num1 == num3
+        return puts "Two Pairs"
+    elsif num2 == num4 and num1 == num5
+        return puts "Two Pairs"
+    elsif num2 == num4 and num3 == num5
+        return puts "Two Pairs"
+    elsif num2 == num5 and num1 == num3
+        return puts "Two Pairs"
+    elsif num2 == num5 and num1 == num4
+        return puts "Two Pairs"
+    elsif num2 == num5 and num3 == num4
+        return puts "Two Pairs"
+    elsif num1 == num2 
+        return puts "A pair"
+    elsif num1 == num3 
+        return puts "a pair"
+    elsif num1 == num4
+        return puts "A pair"
+    elsif num1 == num5
+        return puts "A pair"
+    elsif num2 == num3
+        return puts "A pair"
+    elsif num2 == num4
+        return puts "A pair"
+    elsif num2 == num5
+        return puts "A pair"
+    elsif num3 == num4
+        return puts "A pair"
+    elsif num3 == num5
+        return puts "A pair"
+    elsif num4 == num5
+        return puts "A pair"
+    else
+        puts "no matching cards"
+    end
+end
+puts "White has "
+    pairs(white[0][0,1],white[1][0,1],white[2][0,1],white[3][0,1],white[4][0,1])
+puts "Black has"
+    pairs(black[0][0,1],black[1][0,1],black[2][0,1],black[3][0,1],black[4][0,1])
+
+
+
+    # if white[0][0,1] && white[1][0,1] && white[2][0,1] == white[3][0,1] or white[0][0,1] && white[1][0,1] && white[2][0,1] == white[4][0,1] or white[1][0,1] && white[2][0,1] && white[3][0,1] == white[4][0,1] or white[0][0,1] && white[1][0,1] && white[3][0,1] == white[4][0,1]
 #     puts "White has 4 of a Kind"
 #     elsif 
 #     white[0..1][0,1] == white[2][0,1] or white[0..1][0,1] == white[3][0,1] or white[0..1][0,1] == white[4][0,1] or white[1..2][0,1] == white[3][0,1] or white[1..2][0,1] == white[4][0,1] or white[2..3][0,1] == white[4][0,1]
