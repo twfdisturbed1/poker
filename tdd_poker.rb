@@ -7,7 +7,11 @@ class TestYourFunctions < Minitest::Test
         assert_equal(1, 1)
     end
 
-    def test_if_ace_low_equals_1
-        assert_equal(1, ace_low)
+    def test_if_deck_has_52cards
+        assert_equal(52, deck[0..51])
+    end
+
+    def test_assert_4_is_IV()
+    	assert_equal(white().count, 5)
     end
 end

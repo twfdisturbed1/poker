@@ -23,31 +23,25 @@ $black_hand =" "
 # @rank = values
 # end
 
-
-class Card
-    attr_accessor :points, :type
-    def initialize(str)
-      v = str[0]
-      if v == "T"
-        @points = 10
-      elsif v == "J"
-        @points = 11
-      elsif v == "Q"
-        @points = 12
-      elsif v == "K"
-        @points = 13
-      elsif v == "A"
-        @points = 14
-      else
-        @points = v.to_i
+module PokerHands
+    module Hand
+      class Utils
+        class << self
+          def int(value)
+            case value
+            when 'T' then 10
+            when 'J' then 11
+            when 'Q' then 12
+            when 'K' then 13
+            when 'A' then 14
+            else value.to_i
+            end
+          end
+        end
       end
-      @type  = str[1]
-    end
-  
-    def to_s
-      @value.to_s+@type.to_s
     end
   end
+#
 
 # Building the Deck
 suits = ["H", "D", "C", "S" ]
@@ -124,8 +118,6 @@ else
 end
 
 
-
-
 counter = 0
 white.each_with_index do |value , index| 
     if white[index][1,1] == white[4][1,1]
@@ -192,9 +184,13 @@ elsif
     $b_score > $w_score
     puts "Black Wins"  
 else
-
+    puts  " White Players Hand #{white.sort!} and  Black Players Hand #{black.sort!}"
+puts  white.values_at
     puts "Draw"
 end
+
+puts white_no_suit.last
+
 
     # if white[0][0,1] && white[1][0,1] && white[2][0,1] == white[3][0,1] or white[0][0,1] && white[1][0,1] && white[2][0,1] == white[4][0,1] or white[1][0,1] && white[2][0,1] && white[3][0,1] == white[4][0,1] or white[0][0,1] && white[1][0,1] && white[3][0,1] == white[4][0,1]
 #     puts "White has 4 of a Kind"
