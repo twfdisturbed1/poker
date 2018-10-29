@@ -8,10 +8,15 @@ class TestYourFunctions < Minitest::Test
     end
 
     def test_if_deck_has_52cards
-        assert_equal(52, deck[0..51])
+        assert_equal(52, deck().count)
     end
 
     def test_assert_4_is_IV()
-    	assert_equal(white().count, 5)
+    	assert_equal(white.count, 5)
+    end
+
+    
+    def test_assert_4_is_IV()
+    	assert_equal(Array, white.class)
     end
 end
