@@ -1,11 +1,11 @@
 
 <table width="100%">
   <tr>
-    <th align="center" width="45%"><font Color=white><h2>White Player</h2></font></th>
-    <th align="center" width="10%"> Deal <br>
+    <th align="center" width="48%"><font Color=white><h2>White Player</h2></font></th>
+    <th align="center" width="5%"> Deal <br>
     <input type="button" value="Deal New Hand" onClick="window.location.reload()">
     </th>
-    <th align="center" width="45%"><font Color=black><h2>Black Player</h2></font><br>
+    <th align="center" width="47%"><font Color=black><h2>Black Player</h2></font><br>
      
     </th>
   </tr>
@@ -227,70 +227,72 @@
 
 <hr/>
     <%= p "#{white_score}" %>
+    <hr/> 
+    <%= p "#{white_hand}" %>
 	  </td>
     <td align="center">
 
     <% if $w_score > $b_score %>
-    <font color="white"> "White Wins" </font>
+    <font color="white"> White Player Wins </font>
     <% elsif $b_score > $w_score %>
-      <font color="white"> "Black Wins" </font> 
+      <font color="white">Black Player Wins </font> 
     <% elsif $w_score and $b_score == 8 or $w_score and $b_score == 13 %>
       <% if white_high_card.sort.last == 14 and white_high_card.sort[3] == 5 %>
-        <font color="white">  "Black Player Wins" </font>
+        <font color="white">  Black Player Wins </font>
       <% elsif black_high_card.sort.last == 14 and black_high_card.sort[3] == 5 %>
-        <font color="white">  "White Player Wins" </font>
+        <font color="white">  White Player Wins</font>
         <% end %>
     <% elsif $w_score > 0 and $b_score == $w_score %>
       <% if white_rank_1.sort.last > black_rank_1.sort.last %>
-        <font color="white">  "White Wins" </font>
+        <font color="white">  White Player Wins </font>
       <% elsif white_rank_1.sort.last < black_rank_1.sort.last %>
-        <font color="white"> "Black Wins"  </font>
+        <font color="white">Black Player Wins  </font>
       <% else  %>
         <% if white_high_card.sort.last > black_high_card.sort.last %>
-          <font color="white">"White player Wins"  </font> 
+          <font color="white">White Player Wins </font> 
         <% elsif black_high_card.sort.last > white_high_card.sort.last %>
-          <font color="white"> "Black Player Wins"  </font>
+          <font color="white"> Black Player Wins  </font>
         <% elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-          <font color="white">  "Black Player Wins" </font>
+          <font color="white">  Black Player Wins </font>
         <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-          <font color="white">  "White Player Wins" </font>
+          <font color="white">  White Player Wins</font>
         <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-          <font color="white"> "Black Player Wins"  </font>
+          <font color="white"> Black Player Wins  </font>
         <% elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-          <font color="white">  "White Player Wins" </font>
+          <font color="white">  White Player Wins</font>
         <% elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-          <font color="white">  "Black Player Wins" </font>
+          <font color="white">  Black Player Wins </font>
         <% elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-          <font color="white">  "White Player Wins" </font>
+          <font color="white">  White Player Wins</font>
         <% elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-          <font color="white">  "Black Player Wins" </font>
+          <font color="white">  Black Player Wins </font>
         <% elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-          <font color="white"> "White Player Wins"  </font>
+          <font color="white"> White Player Wins </font>
         <% else %>
           <font color="white"> "Its a Tie"  </font>
         <% end %>
       <% end %>
     <% else %> 
     <% if white_high_card.sort.last > black_high_card.sort.last %>
-        <font color="white">  "White player Wins" </font>
+        <font color="white">  White Player Wins</font>
     <% elsif black_high_card.sort.last > white_high_card.sort.last %>
-        <font color="white">  "Black Player Wins" </font>
+        <font color="white">  Black Player Wins </font>
     <%  elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-      <font color="white">  "Black Player Wins" </font>
+      <font color="white">  Black Player Wins </font>
     <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-      <font color="white"> "White Player Wins"  </font>
+      <font color="white"> White Player Wins </font>
     <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-      <font color="white">  "Black Player Wins" </font>
+      <font color="white">  Black Player Wins </font>
     <%  elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-      <font color="white">  "White Player Wins" </font>
+      <font color="white">  White Player Wins</font>
     <%  elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-      <font color="white">  "Black Player Wins" </font>
+      <font color="white">  Black Player Wins </font>
     <%  elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-      <font color="white">  "White Player Wins" </font>
+      <font color="white">  White Player Wins</font>
     <%  elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-      <font color="white">  "Black Player Wins" </font>
+      <font color="white">  Black Player Wins </font>
     <%  elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-      <font color="white">  "White Player Wins" </font>
+      <font color="white">  White Player Wins</font>
     <%  else %>
       <font color="white">  "Its a Tie" </font>
     <%  end %>
@@ -516,7 +518,8 @@
 
 <hr/>
     <%= p "#{black_score}" %>
-
+    <hr/> 
+    <%= p "#{black_hand}" %>
     </td>
   </tr>
 </table>

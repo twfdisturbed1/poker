@@ -47,11 +47,11 @@ end
 
 
 
-# white << "Jh"
-# white << "Jh"
-# white << "Ah"
-# white << "Ah"
-# white << "Ah"
+# $white << "Jh"
+# $white << "Jh"
+# $white << "Ah"
+# $white << "Ah"
+# $white << "Ah"
 
 # black << "2c"
 # black << "3c"

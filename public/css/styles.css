@@ -33,12 +33,12 @@ header {
     color: white;
     border: #000000;
     border-style: solid;
-    width: 75%
+    width: 90%
 }
 
 nav {
     display: inline-block;
-    width: 75%;
+    width: 90%;
     background: rgb(71,113,72);
     padding: 0px;
     border: #000000;
@@ -53,7 +53,7 @@ nav ul {
 article {
     padding: 5px;
     content: 5px;
-    width: 75%;
+    width: 90%;
     text-align: center;
     background-color: rgba(71,113,72, 0.7);
     height: auto;
@@ -74,7 +74,7 @@ footer {
     color: white;
     border: #000000;
     border-style: solid;
-    width: 75%
+    width: 90%
 }
 
 @media (max-width: 600px) {
