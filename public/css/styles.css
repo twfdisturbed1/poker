@@ -26,7 +26,7 @@ h3.customfont {
     box-sizing: border-box;
 }
 header {
-    background-color: rgba(71,113,72,0.9);
+    background-color: rgba(71,113,72,0.7);
     padding: 0px;
     text-align: center;
     font-size: 25px;
@@ -55,7 +55,7 @@ article {
     content: 5px;
     width: 90%;
     text-align: center;
-    background-color: rgba(71,113,72, 0.7);
+    background-color: rgba(71,113,72, 0.9);
     height: auto;
     border: #000000;
     border-style: double;
@@ -68,7 +68,7 @@ section:after {
 }
 
 footer {
-    background-color: rgba(71,113,72,0.9);
+    background-color: rgba(71,113,72,0.7);
     padding: 10px;
     text-align: center;
     color: white;
