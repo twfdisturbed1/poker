@@ -38,26 +38,26 @@ end
 
 
 # Dealing Cards to players
-5.times do
-    $white << deck.pop 
-end
-5.times do 
-   $black << deck.pop
-end
+# 5.times do
+#     $white << deck.pop 
+# end
+# 5.times do 
+#    $black << deck.pop
+# end
 
 
 
-# $white << "Jh"
-# $white << "Jh"
-# $white << "Ah"
-# $white << "Ah"
-# $white << "Ah"
+$white << "Th"
+$white << "Jh"
+$white << "Qh"
+$white << "Kh"
+$white << "Ac"
 
-# black << "2c"
-# black << "3c"
-# black << "4c"
-# black << "5c"
-# black << "Ac"
+$black << "3c"
+$black << "3c"
+$black << "3c"
+$black << "AD"
+$black << "Ac"
 
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
@@ -76,7 +76,7 @@ all_poker_straights = %w(A 2 3 4 5 6 7 8 9 10 J Q K A 2 3 4 5 A J K Q T 6 7 8 9 
 
 if all_poker_straights.include?((white_no_suit.sort!)) 
     true
-    $w_score += 8
+    $w_score += 5
     $white_hand = $white_hand + " Straight "
 else
    
@@ -84,7 +84,7 @@ end
 
 if all_poker_straights.include?((black_no_suit.sort!)) 
     true
-    $b_score += 8 
+    $b_score += 5
     $black_hand = $black_hand + " Straight "
 else
 end
@@ -100,7 +100,7 @@ end
 
 if counter == 5
         # puts "White has a Flush"
-        $w_score += 5
+        $w_score += 6
         $white_hand = $white_hand + "Flush"
     else 
         # puts "white doesn't have a flush"
@@ -119,7 +119,7 @@ end
 
 if counter == 5
         # puts "Black has a Flush"
-        $b_score += 5
+        $b_score += 6
         $black_hand = $black_hand + "Flush"
     else 
         # puts "Black doesn't have a flush"
@@ -237,7 +237,7 @@ if
 elsif
     $b_score > $w_score
     puts "Black Wins"  
-elsif $w_score and $b_score == 8 or $w_score and $b_score == 13
+elsif $w_score and $b_score == 5 or $w_score and $b_score == 11
         if $white_high_card.sort.last == 14 and $white_high_card.sort[3] == 5
                 puts "Black Player Wins"
         elsif $black_high_card.sort.last == 14 and $black_high_card.sort[3] == 5

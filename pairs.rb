@@ -1,78 +1,78 @@
 def w_pairs (num1, num2, num3, num4, num5)
     if num1 == num2 and num1 == num3 and num1 == num4
         puts "4 of a Kind of #{num1}" 
-        $w_score += 7
+        $w_score += 8
         $white_hand = $white_hand + " 4 of a kind of #{num1}s "
         $white_rank << "#{num1}"
     elsif num1 == num2 and num1 == num3 and num1 == num5
          puts "4 of a Kind of #{num1}"
-        $w_score += 7
+        $w_score += 8
         $white_hand = $white_hand + " 4 of a kind of #{num1}s "
         $white_rank << "#{num1}"
     elsif num1 == num3 and num1 == num4 and num1 == num5
          puts "4 of a kind of #{num1}"
-        $w_score += 7
+        $w_score += 8
         $white_hand = $white_hand + " 4 of a kind of #{num1}s "
         $white_rank << "#{num1}"
     elsif num1 == num2 and num1 == num4 and num1 == num5
          puts "4 of a kind of #{num1}" 
-        $w_score += 7
+        $w_score += 8
         $white_hand = $white_hand + " 4 of a kind of #{num1}s "
         $white_rank << "#{num1}"
     elsif num2 == num3 and num2 == num4 and num2 == num5
          puts "4 of a kind of #{num2}"
-        $w_score += 7
+        $w_score += 8
         $white_hand = $white_hand + " 4 of a kind of #{num2}s "
         $white_rank << "#{num2}"
     elsif num1 == num2 and num1 == num3 and num4 == num5
          puts "Full House of #{num1} and #{num4}"
-        $w_score += 6
-        $white_hand = $white_hand + " Full House of #{num3}s and #{num1}s "
+        $w_score += 7
+        $white_hand = $white_hand + " Full House of #{num3}s and #{num4}s "
         $white_rank << "#{num1}"
     elsif num1 == num2 and num1 == num4 and num3 == num5
          puts "Full House of #{num1} and #{num3}"
          $white_hand = $white_hand + " Full House of #{num1}s and #{num3}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num1}"
     elsif num1 == num2 and num1 == num5 and num3 == num4 
          puts "Full House of #{num1} and #{num3}"
          $white_hand = $white_hand + " Full House of #{num1}s and #{num3}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num1}"
     elsif num1 == num3 and num1 == num4 and num2 == num5
          puts "Full House of #{num1} and #{num2}"
          $white_hand = $white_hand + " Full House of #{num1}s and #{num2}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num1}"
     elsif num1 == num3 and num1 == num5 and num2 == num4
          puts "Full House of #{num1} and #{num2}"
          $white_hand = $white_hand + " Full House of #{num1}s and #{num2}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num1}"
     elsif num1 == num4 and num1 == num5 and num2 == num3
          puts "Full House of #{num1} and #{num2}"
          $white_hand = $white_hand + " Full House of #{num1}s and #{num2}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num1}"
     elsif num2 == num3 and num2 == num4 and num1 == num5
          puts "Full House of #{num2} and #{num1}"
          $white_hand = $white_hand + " Full House of #{num2}s and #{num1}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num2}"
     elsif num2 == num3 and num2 == num5 and num1 == num4
          puts "Full House of #{num2} and #{num1}"
          $white_hand = $white_hand + " Full House of #{num2}s and #{num1}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num2}"
     elsif num2 == num4 and num2 == num5 and num1 == num3 
          puts "Full House of #{num2} and #{num1}"
          $white_hand = $white_hand + " Full House of #{num2}s and #{num1}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num2}"
     elsif num3 == num4 and num3 == num5 and num1 == num2
          puts "Full House of #{num3} and #{num1}"
          $white_hand = $white_hand + " Full House of #{num3}s and #{num1}s "
-        $w_score += 6
+        $w_score += 7
         $white_rank << "#{num3}"
     elsif num1 == num2 and num1 == num3
          puts "3 of a kind of #{num1}"

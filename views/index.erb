@@ -228,7 +228,7 @@
 <hr/>Score 
     <%= p "#{white_score}" %>
     <hr/> 
-    <%= p "#{white_hand}" %>
+    <%= p "#{white_hand}" %> 
 	  </td>
     <td align="center">
 
@@ -236,7 +236,7 @@
     <font color="white"> White Player Wins </font>
     <% elsif $b_score > $w_score %>
       <font color="white">Black Player Wins </font> 
-    <% elsif $w_score and $b_score == 8 or $w_score and $b_score == 13 %>
+    <% elsif $w_score and $b_score == 5 or $w_score and $b_score == 11 %>
       <% if white_high_card.sort.last == 14 and white_high_card.sort[3] == 5 %>
         <font color="white">  Black Player Wins </font>
       <% elsif black_high_card.sort.last == 14 and black_high_card.sort[3] == 5 %>
