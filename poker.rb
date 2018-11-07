@@ -38,26 +38,26 @@ end
 
 
 # Dealing Cards to players
-# 5.times do
-#     $white << deck.pop 
-# end
-# 5.times do 
-#    $black << deck.pop
-# end
+5.times do
+    $white << deck.pop 
+end
+5.times do 
+   $black << deck.pop
+end
 
 
 
-$white << "Th"
-$white << "Jh"
-$white << "Qh"
-$white << "Kh"
-$white << "Ac"
+# $white << "Th"
+# $white << "Jh"
+# $white << "Qh"
+# $white << "Kh"
+# $white << "Ac"
 
-$black << "3c"
-$black << "3c"
-$black << "3c"
-$black << "AD"
-$black << "Ac"
+# $black << "3c"
+# $black << "3c"
+# $black << "3c"
+# $black << "AD"
+# $black << "Ac"
 
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
