@@ -243,9 +243,9 @@
         <font color="white">  White Player Wins</font>
         <% end %>
     <% elsif $w_score > 0 and $b_score == $w_score %>
-      <% if white_rank.sort.last > black_rank.sort.last %>
+      <% if white_rank_1.sort.last > black_rank_1.sort.last %>
         <font color="white">  White Player Wins </font>
-      <% elsif white_rank.sort.last < black_rank.sort.last %>
+      <% elsif white_rank_1.sort.last < black_rank_1.sort.last %>
         <font color="white">Black Player Wins  </font>
       <% else  %>
         <% if white_high_card.sort.last > black_high_card.sort.last %>

@@ -19,6 +19,7 @@ $black_hand = " "
 
 # White Ranks
 $white_rank = []
+
 # Black Ranks
 $black_rank = []
 
@@ -63,18 +64,18 @@ end
 end
 
 
-
-# $white << "TD"
-# $white << "TC"
-# $white << "TS"
-# $white << "TH"
+# $white << "JH"
+# $white << "JC"
 # $white << "AC"
+# $white << "AH"
+# $white << "4S"
 
-# $black << "3C"
-# $black << "3C"
-# $black << "3C"
+
 # $black << "AD"
-# $black << "AC"
+# $black << "TC"
+# $black << "AS"
+# $black << "TD"
+# $black << "3D"
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
 
@@ -220,7 +221,7 @@ white_temp <<  $white_high_card.slow_find_duplicates.flatten
         elsif white_temp.flatten.any? == true 
             puts "A pair of #{white_temp.flatten.sort!}"
             $w_score += 2
-            $white_rank << "#{white_temp.flatten.sort!}"
+            $white_rank << "#{white_temp.flatten.sort![0]}"
             $white_hand = $white_hand + " a pair of #{white_temp.flatten.sort![0]}'s "
         else
             puts "Look for a high Card"
@@ -261,11 +262,54 @@ black_temp <<  $black_high_card.slow_find_duplicates.flatten
         elsif black_temp.flatten.any? == true 
             puts "A pair of #{black_temp.flatten.sort!}"
             $b_score += 2
-            $black_rank << "#{black_temp.flatten.sort!}"
+            $black_rank << "#{black_temp.flatten.sort![0]}"
             $black_hand = $black_hand + " a pair of #{black_temp.flatten.flatten.sort![0]}'s "
         else
             puts "Look for a high Card"
     end
+
+    replacements = {
+        "0" => 0,    
+        "2" => 2,
+        "3" => 3,
+        "4" => 4,
+        "5" => 5,
+        "6" => 6,
+        "7" => 7,
+        "8" => 8,
+        "9" => 9,
+        "10" => 10,
+        "11" => 11,
+        "12" => 12,
+        "13" => 13,
+        "14" => 14,
+    }
+    $white_rank_1 = $white_rank.map do |e|
+      replacements.fetch(e, e)
+    end
+    
+    replacements = {
+        "0" => 0,    
+        "2" => 2,
+        "3" => 3,
+        "4" => 4,
+        "5" => 5,
+        "6" => 6,
+        "7" => 7,
+        "8" => 8,
+        "9" => 9,
+        "10" => 10,
+        "11" => 11,
+        "12" => 12,
+        "13" => 13,
+        "14" => 14,
+    }
+    $black_rank_1 = $black_rank.map do |e|
+      replacements.fetch(e, e)
+    end
+    
+    $white_rank_1.sort.last
+    $black_rank_1.sort.last
 
 $white_rank.sort!.last
 $black_rank.sort!.last
@@ -293,9 +337,9 @@ elsif $w_score and $b_score == 5 or $w_score and $b_score == 11
                 puts "White Player Wins"
         end
 elsif $w_score > 0 and $b_score == $w_score
-    if $white_rank.sort.last > $black_rank.sort.last
+    if $white_rank_1.sort.last > $black_rank_1.sort.last
         puts "White Wins"
-    elsif $white_rank.sort.last < $black_rank.sort.last
+    elsif $white_rank_1.sort.last < $black_rank_1.sort.last
         puts "Black Wins"    
     else 
         if $white_high_card.sort.last > $black_high_card.sort.last
@@ -313,7 +357,7 @@ elsif $w_score > 0 and $b_score == $w_score
         elsif $black_high_card.sort[1] > $white_high_card.sort[1]
             puts "Black Player Wins"
         elsif $black_high_card.sort[1] < $white_high_card.sort[1]
-            puts "White Player Wins"
+            puts "White Player Wins"  
         elsif $black_high_card.sort[0] > $white_high_card.sort[0]
             puts "Black Player Wins"
         elsif $black_high_card.sort[0] < $white_high_card.sort[0]
