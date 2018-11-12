@@ -228,7 +228,7 @@
 <hr/>Score 
     <%= p "#{white_score}" %>
     <hr/> 
-    <%= p "#{white_hand}" %> 
+    <%= p "#{white_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")}" %> 
 	  </td>
     <td align="center">
 
@@ -243,9 +243,9 @@
         <font color="white">  White Player Wins</font>
         <% end %>
     <% elsif $w_score > 0 and $b_score == $w_score %>
-      <% if white_rank_1.sort.last > black_rank_1.sort.last %>
+      <% if white_rank.sort.last > black_rank.sort.last %>
         <font color="white">  White Player Wins </font>
-      <% elsif white_rank_1.sort.last < black_rank_1.sort.last %>
+      <% elsif white_rank.sort.last < black_rank.sort.last %>
         <font color="white">Black Player Wins  </font>
       <% else  %>
         <% if white_high_card.sort.last > black_high_card.sort.last %>
@@ -520,7 +520,7 @@
 <font color=white>Score 
 <%= p "#{black_score}" %>
     <hr/ color=black> 
-    <%= p "#{black_hand}" %>
+    <%= p "#{black_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")}" %>
     </font>
     </td>
   </tr>

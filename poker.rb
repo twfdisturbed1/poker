@@ -1,4 +1,4 @@
-require_relative "pairs.rb"
+# require_relative "pairs.rb"
 
 # My Deck of Cards
 deck = [] 
@@ -18,9 +18,10 @@ $white_hand = " "
 $black_hand = " "
 
 # White Ranks
-$white_rank = ["0"]
+$white_rank = []
 # Black Ranks
-$black_rank = ["0"]
+$black_rank = []
+
 
 
 # Building the Deck
@@ -36,6 +37,22 @@ end
 deck.shuffle!
 end
 
+class Array
+    def find_duplicates
+      select.with_index do |e, i|
+        i
+        self.index(e)
+        i != self.index(e)
+      end
+    end
+    def slow_find_duplicates
+        group_by { |e| e }.
+          each_with_object([]) do |i, arr|
+            arr << i.last.drop(1)
+          end.flatten
+      end
+end  
+
 
 # Dealing Cards to players
 5.times do
@@ -47,18 +64,17 @@ end
 
 
 
-# $white << "Th"
-# $white << "Jh"
-# $white << "Qh"
-# $white << "Kh"
-# $white << "Ac"
+# $white << "TD"
+# $white << "TC"
+# $white << "TS"
+# $white << "TH"
+# $white << "AC"
 
-# $black << "3c"
-# $black << "3c"
-# $black << "3c"
+# $black << "3C"
+# $black << "3C"
+# $black << "3C"
 # $black << "AD"
-# $black << "Ac"
-
+# $black << "AC"
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
 
@@ -172,64 +188,97 @@ $white_high_card.sort.last
 $black_high_card.sort.last
 
 
+p $white_high_card
+white_temp = []
+white_temp <<  $white_high_card.slow_find_duplicates.flatten
+
+# p white_temp.flatten.sort!
 
 
-puts "White has "
-    w_pairs($white[0][0,1],$white[1][0,1],$white[2][0,1],$white[3][0,1],$white[4][0,1])
-puts "Black has"
-    b_pairs($black[0][0,1],$black[1][0,1],$black[2][0,1],$black[3][0,1],$black[4][0,1])
+    if white_temp.flatten.sort!.any? == true && white_temp.flatten.sort![0] == white_temp.flatten.sort![1] && white_temp.flatten.sort![1] == white_temp.flatten.sort![2]
+            puts "4 of a kind of #{white_temp.flatten.sort![0]}s"
+            $white_rank << "#{white_temp.flatten.sort![0]}"
+            $white_hand = $white_hand + " 4 of a kind of #{white_temp.flatten.sort![0]}'s"
+            $w_score += 8
+        elsif white_temp.flatten.sort![0] == white_temp.flatten.sort![1] && white_temp.flatten.sort!.length > 2 or white_temp.flatten.sort![1] == white_temp.flatten.sort![2] && white_temp.flatten.sort!.length > 2
+            puts "Full House #{white_temp.flatten.sort![0]} #{white_temp.flatten.sort![2]}"    
+            $w_score += 7
+            $white_hand = $white_hand + " Full House "
+            $white_rank << "#{white_temp.flatten.sort![1]}"
+        elsif white_temp.flatten.sort!.any? == true && white_temp.flatten.sort![0] == white_temp.flatten.sort![1]
+                puts "3 of a kind #{white_temp.flatten.sort![0]}"
+                $w_score += 4
+                $white_rank << "#{white_temp.flatten.sort![0]}"
+                white_temp_value = white_temp.flatten.sort![0]
+            p white_temp_value
+                $white_hand = $white_hand + " 3 of a kind of #{white_temp_value}'s "
+        elsif white_temp.flatten.sort![0] != white_temp.flatten.sort![1] && white_temp.flatten.sort!.length > 1
+                puts "Two Pairs #{white_temp.flatten.sort![0]} #{white_temp.flatten.sort![1]}"
+                $w_score += 3
+                $white_rank << "#{white_temp.flatten.sort![0]}" << "#{white_temp.flatten.sort![1]}"
+        $white_hand = $white_hand + " Two Pairs of #{white_temp.flatten.sort![0]}'s and #{white_temp.flatten.sort![1]}'s   "
+        elsif white_temp.flatten.any? == true 
+            puts "A pair of #{white_temp.flatten.sort!}"
+            $w_score += 2
+            $white_rank << "#{white_temp.flatten.sort!}"
+            $white_hand = $white_hand + " a pair of #{white_temp.flatten.sort![0]}'s "
+        else
+            puts "Look for a high Card"
+    end
+            
+
+# puts "White has "
+#     w_pairs($white[0][0,1],$white[1][0,1],$white[2][0,1],$white[3][0,1],$white[4][0,1])
+# puts "Black has"
+#     b_pairs($black[0][0,1],$black[1][0,1],$black[2][0,1],$black[3][0,1],$black[4][0,1])
+
+p $black_high_card
+black_temp = []
+black_temp <<  $black_high_card.slow_find_duplicates.flatten
+
+# p black_temp.flatten.sort!
+
+    if black_temp.flatten.sort!.any? == true && black_temp.flatten.sort![0] == black_temp.flatten.sort![1] && black_temp.flatten.sort![1] == black_temp.flatten.sort![2]
+            puts "4 of a kind of #{black_temp.flatten.sort![0]}"
+            $black_hand = $black_hand + " 4 of a kind of #{black_temp.flatten.sort![0]}'s"
+            $black_rank << "#{black_temp.flatten.sort![0]}"
+            $b_score += 8
+        elsif black_temp.flatten.sort![0] == black_temp.flatten.sort![1] && black_temp.flatten.sort!.length > 2 or black_temp.flatten.sort![1] == black_temp.flatten.sort![2] && black_temp.flatten.sort!.length > 2
+            puts "Full House #{black_temp.flatten.sort![0]} #{black_temp.flatten.sort![2]}"    
+            $b_score += 7
+            $black_hand = $black_hand + " Full House "
+            $black_rank << "#{black_temp.flatten.sort![1]}"
+        elsif black_temp.flatten.sort!.any? == true && black_temp.flatten.sort![0] == black_temp.flatten.sort![1]
+                puts "3 of a kind #{black_temp.flatten.sort![0]}"
+                $b_score += 4
+                $black_rank << "#{black_temp.flatten.sort![0]}"
+                $black_hand = $black_hand + " 3 of a kind of #{black_temp.flatten.sort![0]}'s "
+        elsif black_temp.flatten.sort![0] != black_temp.flatten.sort![1] && black_temp.flatten.sort!.length > 1
+                puts "Two Pairs #{black_temp.flatten.sort![0]}'s #{black_temp.flatten.sort![1]}'s"
+                $b_score += 3
+                $black_rank << "#{black_temp.flatten.sort![0]}" << "#{black_temp.flatten.sort![1]}"
+        $black_hand = $black_hand + " Two Pairs of #{black_temp.flatten.sort![0]}'s and #{black_temp.flatten.sort![1]}'s   "
+        elsif black_temp.flatten.any? == true 
+            puts "A pair of #{black_temp.flatten.sort!}"
+            $b_score += 2
+            $black_rank << "#{black_temp.flatten.sort!}"
+            $black_hand = $black_hand + " a pair of #{black_temp.flatten.flatten.sort![0]}'s "
+        else
+            puts "Look for a high Card"
+    end
 
 $white_rank.sort!.last
 $black_rank.sort!.last
 
+p $white_rank
+puts "White Has#{$white_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")} Score: #{$w_score}"
+puts "Black Has#{$black_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")} Score: #{$b_score}"
 
 
-puts "White Has#{$white_hand} Score: #{$w_score}"
-puts "Black Has#{$black_hand} Score: #{$b_score}"
+# $white_rank_2.sort.last
+# $black_rank_2.sort.last
 
 
-replacements = {
-    "0" => 0,    
-    "2" => 2,
-    "3" => 3,
-    "4" => 4,
-    "5" => 5,
-    "6" => 6,
-    "7" => 7,
-    "8" => 8,
-    "9" => 9,
-    "T" => 10,
-    "J" => 11,
-    "Q" => 12,
-    "K" => 13,
-    "A" => 14,
-}
-$white_rank_1 = $white_rank.map do |e|
-  replacements.fetch(e, e)
-end
-
-replacements = {
-    "0" => 0,
-    "2" => 2,
-    "3" => 3,
-    "4" => 4,
-    "5" => 5,
-    "6" => 6,
-    "7" => 7,
-    "8" => 8,
-    "9" => 9,
-    "T" => 10,
-    "J" => 11,
-    "Q" => 12,
-    "K" => 13,
-    "A" => 14,
-}
-$black_rank_1 = $black_rank.map do |e|
-  replacements.fetch(e, e)
-end
-
-$white_rank_1.sort.last
-$black_rank_1.sort.last
 
 if
   $w_score > $b_score
@@ -244,9 +293,9 @@ elsif $w_score and $b_score == 5 or $w_score and $b_score == 11
                 puts "White Player Wins"
         end
 elsif $w_score > 0 and $b_score == $w_score
-    if $white_rank_1.sort.last > $black_rank_1.sort.last
+    if $white_rank.sort.last > $black_rank.sort.last
         puts "White Wins"
-    elsif $white_rank_1.sort.last < $black_rank_1.sort.last
+    elsif $white_rank.sort.last < $black_rank.sort.last
         puts "Black Wins"    
     else 
         if $white_high_card.sort.last > $black_high_card.sort.last
@@ -298,4 +347,5 @@ else
         puts "Its a Tie"
     end
 end
+
 
