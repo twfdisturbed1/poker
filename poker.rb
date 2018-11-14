@@ -299,8 +299,8 @@ black_temp <<  $black_high_card.slow_find_duplicates.flatten
       replacements.fetch(e, e)
     end
     
-    $white_rank_1.sort.last
-    $black_rank_1.sort.last
+$white_rank_1.sort.last
+$black_rank_1.sort.last
 
 $white_rank.sort!.last
 $black_rank.sort!.last
