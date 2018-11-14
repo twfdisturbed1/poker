@@ -13,218 +13,10 @@
     <td align="center">
     <%= p "#{white}" %>
     <hr/>
-    <% white_hand.each do |v,
-      <% if white.include? "AH" %>
-        <img width="115" height="168" src="/images/cards/ace_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "2H" %>
-        <img width="115" height="168" src="/images/cards/2_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "3H" %>
-        <img width="115" height="168" src="/images/cards/3_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "4H" %>
-        <img width="115" height="168" src="/images/cards/4_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "5H" %>
-        <img width="115" height="168" src="/images/cards/5_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "6H" %>
-        <img width="115" height="168" src="/images/cards/6_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "7H" %>
-        <img width="115" height="168" src="/images/cards/7_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "8H" %>
-        <img width="115" height="168" src="/images/cards/8_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "9H" %>
-        <img width="115" height="168" src="/images/cards/9_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "TH" %>
-        <img width="115" height="168" src="/images/cards/10_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "JH" %>
-        <img width="115" height="168" src="/images/cards/jack_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "QH" %>
-        <img width="115" height="168" src="/images/cards/queen_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "KH" %>
-        <img width="115" height="168" src="/images/cards/king_of_hearts.png">
-        <% else %>
-      <% end %>
+    <% white.each do |v| %>
+      <img width="115" height="168" src="/images/cards/<%= v %>.png">
+    <% end %>
 
-      <% if white.include? "AD" %>
-        <img width="115" height="168" src="/images/cards/ace_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "2D" %>
-        <img width="115" height="168" src="/images/cards/2_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "3D" %>
-        <img width="115" height="168" src="/images/cards/3_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "4D" %>
-        <img width="115" height="168" src="/images/cards/4_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "5D" %>
-        <img width="115" height="168" src="/images/cards/5_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "6D" %>
-        <img width="115" height="168" src="/images/cards/6_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "7D" %>
-        <img width="115" height="168" src="/images/cards/7_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "8D" %>
-        <img width="115" height="168" src="/images/cards/8_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "9D" %>
-        <img width="115" height="168" src="/images/cards/9_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "TD" %>
-        <img width="115" height="168" src="/images/cards/10_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "JD" %>
-        <img width="115" height="168" src="/images/cards/jack_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "QD" %>
-        <img width="115" height="168" src="/images/cards/queen_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "KD" %>
-        <img width="115" height="168" src="/images/cards/king_of_diamonds.png">
-        <% else %>
-      <% end %>
-
-      <% if white.include? "AC" %>
-        <img width="115" height="168" src="/images/cards/ace_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "2C" %>
-        <img width="115" height="168" src="/images/cards/2_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "3C" %>
-        <img width="115" height="168" src="/images/cards/3_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "4C" %>
-        <img width="115" height="168" src="/images/cards/4_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "5C" %>
-        <img width="115" height="168" src="/images/cards/5_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "6C" %>
-        <img width="115" height="168" src="/images/cards/6_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "7C" %>
-        <img width="115" height="168" src="/images/cards/7_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "8C" %>
-        <img width="115" height="168" src="/images/cards/8_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "9C" %>
-        <img width="115" height="168" src="/images/cards/9_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "TC" %>
-        <img width="115" height="168" src="/images/cards/10_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "JC" %>
-        <img width="115" height="168" src="/images/cards/jack_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "QC" %>
-        <img width="115" height="168" src="/images/cards/queen_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "KC" %>
-        <img width="115" height="168" src="/images/cards/king_of_clubs.png">
-        <% else %>
-      <% end %>
-
-      <% if white.include? "AS" %>
-        <img width="115" height="168" src="/images/cards/ace_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "2S" %>
-        <img width="115" height="168" src="/images/cards/2_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "3S" %>
-        <img width="115" height="168" src="/images/cards/3_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "4S" %>
-        <img width="115" height="168" src="/images/cards/4_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "5S" %>
-        <img width="115" height="168" src="/images/cards/5_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "6S" %>
-        <img width="115" height="168" src="/images/cards/6_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "7S" %>
-        <img width="115" height="168" src="/images/cards/7_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "8S" %>
-        <img width="115" height="168" src="/images/cards/8_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "9S" %>
-        <img width="115" height="168" src="/images/cards/9_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "TS" %>
-        <img width="115" height="168" src="/images/cards/10_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "JS" %>
-        <img width="115" height="168" src="/images/cards/jack_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "QS" %>
-        <img width="115" height="168" src="/images/cards/queen_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if white.include? "KS" %>
-        <img width="115" height="168" src="/images/cards/king_of_spades.png">
-        <% else %>
-      <% end %>
 
 <hr/>Score 
     <%= p "#{white_score}" %>
@@ -232,7 +24,9 @@
     <%= p "#{white_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")}" %> 
 	  </td>
     <td align="center">
-
+    <% removematch = white_high_card.sort & black_high_card.sort %>
+    <% white_high_card_compare = white_high_card - removematch %>
+    <% black_high_card_compare = black_high_card - removematch %>
     <% if $w_score > $b_score %>
     <font color="white"> White Player Wins </font> <br>
     <img src="../images/white.gif">
@@ -255,75 +49,27 @@
       <font class="blackplayer" color="white">Black Player Wins </font><br>
       <img src="../images/black.gif">
       <% else  %>
-        <% if white_high_card.sort.last > black_high_card.sort.last %>
+        <% if white_high_card_compare.sort.last > black_high_card_compare.sort.last %>
           <font color="white">White Player Wins </font> <br>
           <img src="../images/white.gif">
-        <% elsif black_high_card.sort.last > white_high_card.sort.last %>
+        <% elsif black_high_card_compare.sort.last > white_high_card_compare.sort.last %>
         <font class="blackplayer" color="white">Black Player Wins </font><br>
         <img src="../images/black.gif">
-        <% elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-        <font class="blackplayer" color="white">Black Player Wins </font><br>
-        <img src="../images/black.gif">
-        <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-          <font color="white">  White Player Wins</font> <br>  
-          <img src="../images/white.gif">
-        <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-        <font class="blackplayer" color="white">Black Player Wins </font><br>
-        <img src="../images/black.gif">
-        <% elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-          <font color="white">  White Player Wins</font> <br>  
-          <img src="../images/white.gif">
-        <% elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-        <font class="blackplayer" color="white">Black Player Wins </font><br>
-        <img src="../images/black.gif">
-        <% elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-          <font color="white">  White Player Wins</font> <br>  
-          <img src="../images/white.gif">
-        <% elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-        <font class="blackplayer" color="white">Black Player Wins </font><br>
-        <img src="../images/black.gif">
-        <% elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-          <font color="white"> White Player Wins </font><br>
-          <img src="../images/white.gif">
-        <% else %>
+      <% else %>
           <font color="white"> "Its a Tie"  </font>
         <% end %>
       <% end %>
     <% else %> 
-    <% if white_high_card.sort.last > black_high_card.sort.last %>
-        <font color="white">  White Player Wins</font> <br>  
+      <% if white_high_card_compare.sort.last > black_high_card_compare.sort.last %>
+        <font color="white">White Player Wins </font> <br>
         <img src="../images/white.gif">
-    <% elsif black_high_card.sort.last > white_high_card.sort.last %>
-    <font class="blackplayer" color="white">Black Player Wins </font><br>
-    <img src="../images/black.gif">
-    <%  elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-    <font class="blackplayer" color="white">Black Player Wins </font><br>
-    <img src="../images/black.gif">
-    <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-      <font color="white"> White Player Wins </font><br>
-      <img src="../images/white.gif">
-    <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-         <font class="blackplayer" color="white">Black Player Wins </font> <br>     
-         <img src="../images/black.gif">
-    <%  elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-      <font color="white">  White Player Wins</font> <br>  
-      <img src="../images/white.gif">
-    <%  elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-         <font class="blackplayer" color="white">Black Player Wins </font><br>       
-         <img src="../images/black.gif">
-    <%  elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-      <font color="white">  White Player Wins</font> <br>  
-      <img src="../images/white.gif">
-    <%  elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-         <font class="blackplayer" color="white">Black Player Wins </font><br>       
-         <img src="../images/black.gif">
-    <%  elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-      <font color="white">  White Player Wins</font> <br>  
-      <img src="../images/white.gif">
-    <%  else %>
-      <font color="white">  "Its a Tie" </font>
-    <%  end %>
-  <%  end %>
+      <% elsif black_high_card_compare.sort.last > white_high_card_compare.sort.last %>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
+      <% else %>
+        <font color="white"> "Its a Tie"  </font>
+      <% end %>
+<% end %>
 
 
     </td>
@@ -331,217 +77,10 @@
   
     <%= p "#{black}" %>
     <hr/ color=black>
-      <% if black.include? "AH" %>
-        <img width="115" height="168" src="/images/cards/ace_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "2H" %>
-        <img width="115" height="168" src="/images/cards/2_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "3H" %>
-        <img width="115" height="168" src="/images/cards/3_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "4H" %>
-        <img width="115" height="168" src="/images/cards/4_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "5H" %>
-        <img width="115" height="168" src="/images/cards/5_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "6H" %>
-        <img width="115" height="168" src="/images/cards/6_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "7H" %>
-        <img width="115" height="168" src="/images/cards/7_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "8H" %>
-        <img width="115" height="168" src="/images/cards/8_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "9H" %>
-        <img width="115" height="168" src="/images/cards/9_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "TH" %>
-        <img width="115" height="168" src="/images/cards/10_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "JH" %>
-        <img width="115" height="168" src="/images/cards/jack_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "QH" %>
-        <img width="115" height="168" src="/images/cards/queen_of_hearts.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "KH" %>
-        <img width="115" height="168" src="/images/cards/king_of_hearts.png">
-        <% else %>
-      <% end %>
+    <% black.each do |v| %>
+      <img width="115" height="168" src="/images/cards/<%= v %>.png">
+    <% end %>
 
-      <% if black.include? "AD" %>
-        <img width="115" height="168" src="/images/cards/ace_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "2D" %>
-        <img width="115" height="168" src="/images/cards/2_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "3D" %>
-        <img width="115" height="168" src="/images/cards/3_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "4D" %>
-        <img width="115" height="168" src="/images/cards/4_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "5D" %>
-        <img width="115" height="168" src="/images/cards/5_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "6D" %>
-        <img width="115" height="168" src="/images/cards/6_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "7D" %>
-        <img width="115" height="168" src="/images/cards/7_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "8D" %>
-        <img width="115" height="168" src="/images/cards/8_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "9D" %>
-        <img width="115" height="168" src="/images/cards/9_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "TD" %>
-        <img width="115" height="168" src="/images/cards/10_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "JD" %>
-        <img width="115" height="168" src="/images/cards/jack_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "QD" %>
-        <img width="115" height="168" src="/images/cards/queen_of_diamonds.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "KD" %>
-        <img width="115" height="168" src="/images/cards/king_of_diamonds.png">
-        <% else %>
-      <% end %>
-
-      <% if black.include? "AC" %>
-        <img width="115" height="168" src="/images/cards/ace_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "2C" %>
-        <img width="115" height="168" src="/images/cards/2_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "3C" %>
-        <img width="115" height="168" src="/images/cards/3_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "4C" %>
-        <img width="115" height="168" src="/images/cards/4_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "5C" %>
-        <img width="115" height="168" src="/images/cards/5_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "6C" %>
-        <img width="115" height="168" src="/images/cards/6_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "7C" %>
-        <img width="115" height="168" src="/images/cards/7_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "8C" %>
-        <img width="115" height="168" src="/images/cards/8_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "9C" %>
-        <img width="115" height="168" src="/images/cards/9_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "TC" %>
-        <img width="115" height="168" src="/images/cards/10_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "JC" %>
-        <img width="115" height="168" src="/images/cards/jack_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "QC" %>
-        <img width="115" height="168" src="/images/cards/queen_of_clubs.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "KC" %>
-        <img width="115" height="168" src="/images/cards/king_of_clubs.png">
-        <% else %>
-      <% end %>
-
-      <% if black.include? "AS" %>
-        <img width="115" height="168" src="/images/cards/ace_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "2S" %>
-        <img width="115" height="168" src="/images/cards/2_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "3S" %>
-        <img width="115" height="168" src="/images/cards/3_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "4S" %>
-        <img width="115" height="168" src="/images/cards/4_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "5S" %>
-        <img width="115" height="168" src="/images/cards/5_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "6S" %>
-        <img width="115" height="168" src="/images/cards/6_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "7S" %>
-        <img width="115" height="168" src="/images/cards/7_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "8S" %>
-        <img width="115" height="168" src="/images/cards/8_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "9S" %>
-        <img width="115" height="168" src="/images/cards/9_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "TS" %>
-        <img width="115" height="168" src="/images/cards/10_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "JS" %>
-        <img width="115" height="168" src="/images/cards/jack_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "QS" %>
-        <img width="115" height="168" src="/images/cards/queen_of_spades.png">
-        <% else %>
-      <% end %>
-      <% if black.include? "KS" %>
-        <img width="115" height="168" src="/images/cards/king_of_spades.png">
-        <% else %>
-      <% end %>
 
 <hr/ color=black>
 <font color=white>Score 

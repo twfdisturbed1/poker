@@ -20,10 +20,15 @@ white_hand = session[:$white_hand]
 black_hand = session[:$black_hand]
 white_temp = session[:white_temp]
 black_temp = session[:black_temp]
+removematch = session[:removematch]
+white_high_card_compare = session[:white_high_card_compare]
+black_high_card_compare = session[:black_high_card_compare]
+
 load 'poker.rb'
 
 
-erb :index, :layout => :layout, locals: {white: $white, black: $black, cards: cards, deck: deck, white_score: $w_score, black_score: $b_score, black_high_card: $black_high_card, white_high_card: $white_high_card, white_rank_1: $white_rank_1, black_rank_1: $black_rank_1, white_rank: $white_rank, black_rank: $black_rank, white_hand: $white_hand, black_hand: $black_hand, white_temp: white_temp, black_temp: black_temp  } 
+
+erb :index, :layout => :layout, locals: {white: $white, black: $black, cards: cards, deck: deck, white_score: $w_score, black_score: $b_score, black_high_card: $black_high_card, white_high_card: $white_high_card, white_rank_1: $white_rank_1, black_rank_1: $black_rank_1, white_rank: $white_rank, black_rank: $black_rank, white_hand: $white_hand, black_hand: $black_hand, white_temp: white_temp, black_temp: black_temp,white_high_card_compare: white_high_card_compare, black_high_card_compare: black_high_card_compare, removematch: removematch } 
 end
 
 get '/index' do
@@ -44,10 +49,14 @@ white_hand = session[:$white_hand]
 black_hand = session[:$black_hand]
 white_temp = session[:white_temp]
 black_temp = session[:black_temp]
+removematch = session[:removematch]
+white_high_card_compare = session[:white_high_card_compare]
+black_high_card_compare = session[:black_high_card_compare]
 load 'poker.rb'
 
 
-erb :index, :layout => :layout, locals: {white: $white, black: $black, cards: cards, deck: deck, white_score: $w_score, black_score: $b_score, black_high_card: $black_high_card, white_high_card: $white_high_card, white_rank_1: $white_rank_1, black_rank_1: $black_rank_1, white_rank: $white_rank, black_rank: $black_rank, white_hand: $white_hand, black_hand: $black_hand, white_temp: white_temp, black_temp: black_temp  } 
+
+erb :index, :layout => :layout, locals: {white: $white, black: $black, cards: cards, deck: deck, white_score: $w_score, black_score: $b_score, black_high_card: $black_high_card, white_high_card: $white_high_card, white_rank_1: $white_rank_1, black_rank_1: $black_rank_1, white_rank: $white_rank, black_rank: $black_rank, white_hand: $white_hand, black_hand: $black_hand, white_temp: white_temp, black_temp: black_temp,white_high_card_compare: white_high_card_compare, black_high_card_compare: black_high_card_compare, removematch: removematch } 
 end
 
 post '/load' do
@@ -59,8 +68,7 @@ session[:white_high_card] = white_high_card
 session[:$white_hand] = white_hand 
 session[:$black_hand] = black_hand
 session[:white_temp] = white_temp
-session[:black_temp] = black_temp
-load 'poker.rb'
+session[:black_temp] = black_tem
 redirect '/'
 end
 
