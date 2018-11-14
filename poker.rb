@@ -219,7 +219,7 @@ white_temp <<  $white_high_card.slow_find_duplicates.flatten
             puts "A pair of #{white_temp.flatten.sort!}"
             $w_score += 2
             $white_rank << "#{white_temp.flatten.sort![0]}"
-            $white_hand = $white_hand + " a pair of #{white_temp.flatten.sort![0]}'s "
+            $white_hand = $white_hand + " A pair of #{white_temp.flatten.sort![0]}'s "
         else
             puts "Look for a high Card"
     end
@@ -254,7 +254,7 @@ black_temp <<  $black_high_card.slow_find_duplicates.flatten
             puts "A pair of #{black_temp.flatten.sort!}"
             $b_score += 2
             $black_rank << "#{black_temp.flatten.sort![0]}"
-            $black_hand = $black_hand + " a pair of #{black_temp.flatten.flatten.sort![0]}'s "
+            $black_hand = $black_hand + " A pair of #{black_temp.flatten.flatten.sort![0]}'s "
         else
             puts "Look for a high Card"
     end
