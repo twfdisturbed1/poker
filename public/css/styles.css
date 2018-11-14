@@ -6,11 +6,35 @@
     font-family: "LeagueSpartan-Bold";
     src: url(/fonts/LeagueSpartan-Bold.ttf) format("truetype");
 }
+.button {
+    background-color: rgb(47, 187, 51);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+}
+.blackplayer{
+    color: #ffffff;
+    text-shadow: 4px 4px 4px #000000;}
 h2.customfont { 
     font-family: "LeagueSpartan-Bold", Verdana, Tahoma;
 }
+h1 {
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    font-weight: 900;
+    font-family: 'Skranji', cursive;
+    text-shadow: 4px 4px 4px #000000;
+}
 h1.customfont { 
-    font-family: "LeagueSpartan-Bold", Verdana, Tahoma;
+    font-family: 'Libre Baskerville', serif;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
 }
 h3.customfont { 
     font-family: "LeagueSpartan-Bold", Verdana, Tahoma;
@@ -27,18 +51,22 @@ h3.customfont {
 }
 header {
     background-color: rgba(71,113,72,0.7);
+    background-image: url("../images/top.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
     padding: 0px;
     text-align: center;
     font-size: 25px;
     color: white;
     border: #000000;
     border-style: solid;
-    width: 90%
+    width: 95%;
 }
 
 nav {
     display: inline-block;
-    width: 90%;
+    width: 95%;
     background: rgb(71,113,72);
     padding: 0px;
     border: #000000;
@@ -53,7 +81,7 @@ nav ul {
 article {
     padding: 5px;
     content: 5px;
-    width: 90%;
+    width: 95%;
     text-align: center;
     background-color: rgba(71,113,72, 0.9);
     height: auto;
@@ -74,7 +102,7 @@ footer {
     color: white;
     border: #000000;
     border-style: solid;
-    width: 90%
+    width: 95%
 }
 
 @media (max-width: 600px) {

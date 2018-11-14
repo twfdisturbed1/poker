@@ -1,11 +1,11 @@
 
 <table width="100%">
   <tr>
-    <th align="center" width="48%"><font Color=white><h2>White Player</h2></font></th>
-    <th align="center" width="4%"> Deal <hr/>
-    <input type="button" value="Deal New Hand" onClick="window.location.reload()">
+    <th align="center" width="49%"><font Color=white><h2>White Player</h2></font></th>
+    <th align="center" width="2%"> Deal <hr/>
+    <input type="button" class="button" value="Deal New Hand" onClick="window.location.reload()">
     </th>
-    <th align="center" width="48%"><font Color=black><h2>Black Player</h2></font><br>
+    <th align="center" width="49%"><font class="blackplayer" Color=black><h2>Black Player</h2></font><br>
      
     </th>
   </tr>
@@ -233,66 +233,92 @@
     <td align="center">
 
     <% if $w_score > $b_score %>
-    <font color="white"> White Player Wins </font>
+    <font color="white"> White Player Wins </font> <br>
+    <img src="../images/white.gif">
     <% elsif $b_score > $w_score %>
-      <font color="white">Black Player Wins </font> 
+      <font class="blackplayer" color="white">Black Player Wins </font><br>
+      <img src="../images/black.gif"> 
     <% elsif $w_score and $b_score == 5 or $w_score and $b_score == 11 %>
       <% if white_high_card.sort.last == 14 and white_high_card.sort[3] == 5 %>
-        <font color="white">  Black Player Wins </font>
+      <font class="blackplayer" color="white">Black Player Wins </font>
+      <img src="../images/black.gif">
       <% elsif black_high_card.sort.last == 14 and black_high_card.sort[3] == 5 %>
-        <font color="white">  White Player Wins</font>
+        <font color="white">  White Player Wins</font> <br>
+        <img src="../images/white.gif">  
         <% end %>
     <% elsif $w_score > 0 and $b_score == $w_score %>
       <% if white_rank_1.sort.last > black_rank_1.sort.last %>
-        <font color="white">  White Player Wins </font>
+        <font color="white">  White Player Wins </font><br>
+        <img src="../images/white.gif">
       <% elsif white_rank_1.sort.last < black_rank_1.sort.last %>
-        <font color="white">Black Player Wins  </font>
+      <font class="blackplayer" color="white">Black Player Wins </font><br>
+      <img src="../images/black.gif">
       <% else  %>
         <% if white_high_card.sort.last > black_high_card.sort.last %>
-          <font color="white">White Player Wins </font> 
+          <font color="white">White Player Wins </font> <br>
+          <img src="../images/white.gif">
         <% elsif black_high_card.sort.last > white_high_card.sort.last %>
-          <font color="white"> Black Player Wins  </font>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
         <% elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-          <font color="white">  Black Player Wins </font>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
         <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-          <font color="white">  White Player Wins</font>
+          <font color="white">  White Player Wins</font> <br>  
+          <img src="../images/white.gif">
         <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-          <font color="white"> Black Player Wins  </font>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
         <% elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-          <font color="white">  White Player Wins</font>
+          <font color="white">  White Player Wins</font> <br>  
+          <img src="../images/white.gif">
         <% elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-          <font color="white">  Black Player Wins </font>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
         <% elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-          <font color="white">  White Player Wins</font>
+          <font color="white">  White Player Wins</font> <br>  
+          <img src="../images/white.gif">
         <% elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-          <font color="white">  Black Player Wins </font>
+        <font class="blackplayer" color="white">Black Player Wins </font><br>
+        <img src="../images/black.gif">
         <% elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-          <font color="white"> White Player Wins </font>
+          <font color="white"> White Player Wins </font><br>
+          <img src="../images/white.gif">
         <% else %>
           <font color="white"> "Its a Tie"  </font>
         <% end %>
       <% end %>
     <% else %> 
     <% if white_high_card.sort.last > black_high_card.sort.last %>
-        <font color="white">  White Player Wins</font>
+        <font color="white">  White Player Wins</font> <br>  
+        <img src="../images/white.gif">
     <% elsif black_high_card.sort.last > white_high_card.sort.last %>
-        <font color="white">  Black Player Wins </font>
+    <font class="blackplayer" color="white">Black Player Wins </font><br>
+    <img src="../images/black.gif">
     <%  elsif black_high_card.sort[3] > white_high_card.sort[3] %>
-      <font color="white">  Black Player Wins </font>
+    <font class="blackplayer" color="white">Black Player Wins </font><br>
+    <img src="../images/black.gif">
     <% elsif black_high_card.sort[3] < white_high_card.sort[3] %>
-      <font color="white"> White Player Wins </font>
+      <font color="white"> White Player Wins </font><br>
+      <img src="../images/white.gif">
     <% elsif black_high_card.sort[2] > white_high_card.sort[2] %>
-      <font color="white">  Black Player Wins </font>
+         <font class="blackplayer" color="white">Black Player Wins </font> <br>     
+         <img src="../images/black.gif">
     <%  elsif black_high_card.sort[2] < white_high_card.sort[2] %>
-      <font color="white">  White Player Wins</font>
+      <font color="white">  White Player Wins</font> <br>  
+      <img src="../images/white.gif">
     <%  elsif black_high_card.sort[1] > white_high_card.sort[1] %>
-      <font color="white">  Black Player Wins </font>
+         <font class="blackplayer" color="white">Black Player Wins </font><br>       
+         <img src="../images/black.gif">
     <%  elsif black_high_card.sort[1] < white_high_card.sort[1] %>
-      <font color="white">  White Player Wins</font>
+      <font color="white">  White Player Wins</font> <br>  
+      <img src="../images/white.gif">
     <%  elsif black_high_card.sort[0] > white_high_card.sort[0] %>
-      <font color="white">  Black Player Wins </font>
+         <font class="blackplayer" color="white">Black Player Wins </font><br>       
+         <img src="../images/black.gif">
     <%  elsif black_high_card.sort[0] < white_high_card.sort[0] %>
-      <font color="white">  White Player Wins</font>
+      <font color="white">  White Player Wins</font> <br>  
+      <img src="../images/white.gif">
     <%  else %>
       <font color="white">  "Its a Tie" </font>
     <%  end %>
