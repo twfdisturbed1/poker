@@ -59,9 +59,9 @@ end
 5.times do
     $white << deck.pop 
 end
-# 5.times do 
-#    $black << deck.pop
-# end
+5.times do 
+   $black << deck.pop
+end
 
 
 # $white << "AH"
@@ -71,11 +71,11 @@ end
 # $white << "9S"
 
 
-$black << "2C"
-$black << "KC"
-$black << "QS"
-$black << "JD"
-$black << "8D"
+# $black << "2C"
+# $black << "KC"
+# $black << "QS"
+# $black << "JD"
+# $black << "8D"
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
 
