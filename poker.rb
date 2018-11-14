@@ -64,18 +64,18 @@ end
 end
 
 
-# $white << "JH"
-# $white << "JC"
-# $white << "AC"
 # $white << "AH"
-# $white << "4S"
+# $white << "K"
+# $white << "QC"
+# $white << "JH"
+# $white << "9S"
 
 
 # $black << "AD"
-# $black << "TC"
-# $black << "AS"
-# $black << "TD"
-# $black << "3D"
+# $black << "KC"
+# $black << "QS"
+# $black << "JD"
+# $black << "8D"
 
 puts  " White Players Hand #{$white} and  Black Players Hand #{$black}"
 
@@ -188,12 +188,9 @@ w_high_card
 $white_high_card.sort.last
 $black_high_card.sort.last
 
-
 p $white_high_card
 white_temp = []
 white_temp <<  $white_high_card.slow_find_duplicates.flatten
-
-# p white_temp.flatten.sort!
 
 
     if white_temp.flatten.sort!.any? == true && white_temp.flatten.sort![0] == white_temp.flatten.sort![1] && white_temp.flatten.sort![1] == white_temp.flatten.sort![2]
@@ -228,16 +225,10 @@ white_temp <<  $white_high_card.slow_find_duplicates.flatten
     end
             
 
-# puts "White has "
-#     w_pairs($white[0][0,1],$white[1][0,1],$white[2][0,1],$white[3][0,1],$white[4][0,1])
-# puts "Black has"
-#     b_pairs($black[0][0,1],$black[1][0,1],$black[2][0,1],$black[3][0,1],$black[4][0,1])
-
 p $black_high_card
 black_temp = []
 black_temp <<  $black_high_card.slow_find_duplicates.flatten
 
-# p black_temp.flatten.sort!
 
     if black_temp.flatten.sort!.any? == true && black_temp.flatten.sort![0] == black_temp.flatten.sort![1] && black_temp.flatten.sort![1] == black_temp.flatten.sort![2]
             puts "4 of a kind of #{black_temp.flatten.sort![0]}"
@@ -318,78 +309,37 @@ p $white_rank
 puts "White Has#{$white_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")} Score: #{$w_score}"
 puts "Black Has#{$black_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")} Score: #{$b_score}"
 
-
-# $white_rank_2.sort.last
-# $black_rank_2.sort.last
-
-
+removematch = $white_high_card.sort & $black_high_card.sort
+p removematch.sort
+White_high_card_compare = $white_high_card - removematch
+black_high_card_compare = $black_high_card - removematch
 
 if
-  $w_score > $b_score
-  puts "White Wins"
-elsif
-    $b_score > $w_score
-    puts "Black Wins"  
-elsif $w_score and $b_score == 5 or $w_score and $b_score == 11
-        if $white_high_card.sort.last == 14 and $white_high_card.sort[3] == 5
-                puts "Black Player Wins"
-        elsif $black_high_card.sort.last == 14 and $black_high_card.sort[3] == 5
-                puts "White Player Wins"
-        end
-elsif $w_score > 0 and $b_score == $w_score
-    if $white_rank_1.sort.last > $black_rank_1.sort.last
-        puts "White Wins"
-    elsif $white_rank_1.sort.last < $black_rank_1.sort.last
-        puts "Black Wins"    
-    else 
-        if $white_high_card.sort.last > $black_high_card.sort.last
-            puts "White player Wins"
-        elsif $black_high_card.sort.last > $white_high_card.sort.last
-            puts "Black Player Wins"
-        elsif $black_high_card.sort[3] > $white_high_card.sort[3] 
-            puts "Black Player Wins"
-        elsif $black_high_card.sort[3] < $white_high_card.sort[3] 
-            puts "White Player Wins"
-        elsif $black_high_card.sort[2] > $white_high_card.sort[2]
-            puts "Black Player Wins"
-        elsif $black_high_card.sort[2] < $white_high_card.sort[2]
-            puts "White Player Wins"
-        elsif $black_high_card.sort[1] > $white_high_card.sort[1]
-            puts "Black Player Wins"
-        elsif $black_high_card.sort[1] < $white_high_card.sort[1]
-            puts "White Player Wins"  
-        elsif $black_high_card.sort[0] > $white_high_card.sort[0]
-            puts "Black Player Wins"
-        elsif $black_high_card.sort[0] < $white_high_card.sort[0]
-            puts "White Player Wins"
-        else
-            puts "Its a Tie"
-        end
-    end
-else
-    if $white_high_card.sort.last > $black_high_card.sort.last
-        puts "White player Wins"
-    elsif $black_high_card.sort.last > $white_high_card.sort.last
-        puts "Black Player Wins"
-    elsif $black_high_card.sort[3] > $white_high_card.sort[3] 
-        puts "Black Player Wins"
-    elsif $black_high_card.sort[3] < $white_high_card.sort[3] 
-        puts "White Player Wins"
-    elsif $black_high_card.sort[2] > $white_high_card.sort[2]
-        puts "Black Player Wins"
-    elsif $black_high_card.sort[2] < $white_high_card.sort[2]
-        puts "White Player Wins"
-    elsif $black_high_card.sort[1] > $white_high_card.sort[1]
-        puts "Black Player Wins"
-    elsif $black_high_card.sort[1] < $white_high_card.sort[1]
-        puts "White Player Wins"
-    elsif $black_high_card.sort[0] > $white_high_card.sort[0]
-        puts "Black Player Wins"
-    elsif $black_high_card.sort[0] < $white_high_card.sort[0]
-        puts "White Player Wins"
-    else
+    $w_score > $b_score
+    puts "White Wins"
+  elsif
+      $b_score > $w_score
+      puts "Black Wins"  
+  elsif $w_score and $b_score == 5 or $w_score and $b_score == 11
+          if $white_high_card.sort.last == 14 and $white_high_card.sort[3] == 5
+                  puts "Black Player Wins"
+          elsif $black_high_card.sort.last == 14 and $black_high_card.sort[3] == 5
+                  puts "White Player Wins"
+          end
+  elsif $w_score > 0 and $b_score == $w_score
+        if $white_rank_1.sort.last > $black_rank_1.sort.last
+          puts "White Wins"
+        elsif $white_rank_1.sort.last < $black_rank_1.sort.last
+          puts "Black Wins"    
+        else 
         puts "Its a Tie"
-    end
-end
-
-
+        end
+  else
+      if White_high_card_compare.sort.last > black_high_card_compare.sort.last
+          puts "White player Wins"
+      elsif black_high_card_compare.sort.last > White_high_card_compare.sort.last
+          puts "Black Player Wins"
+      else
+        puts "Its a Tie"
+      end
+  end
