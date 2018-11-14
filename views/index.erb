@@ -1,29 +1,31 @@
 
 <table width="100%">
   <tr>
-    <th align="center" width="49%"><font Color=white><h2>White Player</h2></font></th>
-    <th align="center" width="2%"> Deal <hr/>
-    <div class="card">
-    <a href="/index"><img src="images/chip.png" alt="Card Back"></a>
-    <a href="/index"><img src="images/chip2.png" class="img-top" alt="Card Front"></a>
-</div>
+    <th align="center" valign="top" width="49%"> 
+      <font Color=white><h2>White Player</h2></font></th>
+    <th align="center" width="2%">        
+     <div class="card">
+      <a href="/index"><img src="images/chip.png" alt="Card Back"></a>
+      <a href="/index"><img src="images/chip2.png" class="img-top" alt="Card Front"></a>
+     </div>
     </th>
-    <th align="center" width="49%"><font class="blackplayer" Color=black><h2>Black Player</h2></font><br>
+    <th align="center" valign="top" width="49%">    
+      <font class="blackplayer" Color=black><h2>Black Player</h2></font>
      
     </th>
   </tr>
     <tr>
     <td align="center">
-    <%= p "#{white}" %>
+    <% p "#{white}" %>
     <hr/>
     <% white.each do |v| %>
       <img width="115" height="168" src="/images/cards/<%= v %>.png">
     <% end %>
 
-
-<hr/>Score 
-    <%= p "#{white_score}" %>
-    <hr/> 
+<hr/>
+<!-- Score -->
+    <% p "#{white_score}" %>
+    <!-- <hr/> --> 
     <%= p "#{white_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")}" %> 
 	  </td>
     <td align="center">
@@ -77,17 +79,16 @@
 
     </td>
     <td align="center">
-  
-    <%= p "#{black}" %>
+    <% p "#{black}" %>
     <hr/ color=black>
     <% black.each do |v| %>
       <img width="115" height="168" src="/images/cards/<%= v %>.png">
     <% end %>
 
 
-<hr/ color=black>
-<font color=white>Score 
-<%= p "#{black_score}" %>
+<!-- <hr/ color=black> -->
+<!-- <font color=white>Score -->
+<% p "#{black_score}" %>
     <hr/ color=black> 
     <%= p "#{black_hand.gsub(/10/, "Ten").gsub(/11/, "Jack").gsub(/12/, "Queen").gsub(/13/, "King").gsub(/14/, "Ace")}" %>
     </font>
